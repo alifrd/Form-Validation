@@ -2,11 +2,12 @@
 const sndbtn = document.getElementById('sendBtn');
 
 //Event Listner
-eventListners();
-
 function eventListners(){
     document.addEventListener('DOMContentLoaded', appinit)
 }
+
+eventListners();
+
 
 
 //Function

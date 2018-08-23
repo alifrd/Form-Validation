@@ -3,7 +3,9 @@ const
     sndbtn = document.getElementById('sendBtn'),
     email = document.getElementById('email'),
     subject = document.getElementById('subject'),
-    message = document.getElementById('message');
+    message = document.getElementById('message'),
+    reset = document.getElementById('resetBtn'),
+    sendEmailForm = document.getElementById('email-form');
 
 //Event Listner
 function eventListners(){
@@ -15,7 +17,8 @@ function eventListners(){
     subject.addEventListener('blur', validateFiled)
     message.addEventListener('blur', validateFiled)
     
-
+    //Reset Button
+    reset.addEventListener('click' , resetFrom)
 }
 
 eventListners();
@@ -40,10 +43,12 @@ function validateFiled(){
     error = document.querySelectorAll('.error');
 
     if(email.value !== '' && subject.value !== '' && message.value !== ''){
-        if(error.length === 0 ){
-            sndbtn.disabled = false;
-        }    
+        if(error.length === 0 )
+            sndbtn.disabled = false;  
     }
+
+
+
 }
 
 function validateLength(field){
@@ -68,4 +73,8 @@ function validateEmail(field){
         field.style.borderBottomColor = "red";
         field.classList.add('error');
     }    
+}
+
+function resetFrom(){
+    sendEmailForm.reset();
 }

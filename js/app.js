@@ -1,6 +1,5 @@
 //Variable 
 const sndbtn = document.getElementById('sendBtn');
-const 
 
 //Event Listner
 eventListners();
@@ -13,5 +12,5 @@ function eventListners(){
 //Function
 
 function appinit(){
-    sndbtn.disabled = true ;
+    sndbtn.disabled = true;
 }

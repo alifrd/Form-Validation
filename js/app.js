@@ -16,7 +16,10 @@ function eventListners(){
     email.addEventListener('blur', validateFiled)
     subject.addEventListener('blur', validateFiled)
     message.addEventListener('blur', validateFiled)
-    
+
+    //Send
+    sendEmailForm.addEventListener('submit', sendEmail)
+
     //Reset Button
     reset.addEventListener('click' , resetFrom)
 }
@@ -77,4 +80,15 @@ function validateEmail(field){
 
 function resetFrom(){
     sendEmailForm.reset();
+}
+
+function sendEmail(e){
+    e.preventDefault();
+
+    const spinner = document.querySelector('#spinner');
+    spinner.style.display = 'block';
+    
+    setTimeout(() => {
+        spinner.style.display = 'none';
+    }, 3000);
 }
